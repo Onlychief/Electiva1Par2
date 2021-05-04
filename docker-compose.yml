@@ -54,7 +54,7 @@ services:
           - VIRTUAL_HOST=bdlaravel
 
     short.test:
-        image: onlychiefy/nginx-multisite-test:1.9
+        image: afjacanamijoy/fred_acortador:1.1
         restart: always
         expose:
           - "80"
@@ -62,7 +62,7 @@ services:
           - VIRTUAL_HOST=short.test
 
     bdacortador:
-        image: onlychiefy/nginx-multisite-test:1.10
+        image: image: afjacanamijoy/fred_mysqldb:1.1
         restart: always
         expose:
           - "80"
@@ -78,7 +78,7 @@ services:
           - VIRTUAL_HOST=moodle.test
 
     mariadbphp.test:
-        image: onlychiefy/nginx-multisite-test:1.12
+        image: image: afjacanamijoy/mariadb:1.1
         restart: always
         expose:
           - "80"
