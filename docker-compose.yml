@@ -1,0 +1,97 @@
+version: '3'
+
+services:
+
+    proxy:
+        image: jwilder/nginx-proxy:0.7.0
+        container_name: proxy-test
+        ports:
+          - "80:80"
+          - "443:443"
+        volumes:
+          - /var/run/docker.sock:/tmp/docker.sock:ro
+          - /etc/ngingx/vhost.d
+          - /usr/share/nginx/html
+
+    antonio-paya.test:
+        image: onlychiefy/nginx-multisite-test:1.2
+        restart: always
+        expose:
+          - "80"
+        environment:
+          - VIRTUAL_HOST=antonio-paya.test
+
+    network-soluciones.test:
+        image: onlychiefy/nginx-multisite-test:1.3
+        restart: always
+        expose:
+          - "80"
+        environment:
+          - VIRTUAL_HOST=network-soluciones.test
+
+    example-page.test:
+        image: onlychiefy/nginx-multisite-test:1.4
+        restart: always
+        expose:
+          - "80"
+        environment:
+          - VIRTUAL_HOST=example-page.test 
+
+    pos.test:
+        image: onlychiefy/nginx-multisite-test:1.5
+        restart: always
+        expose:
+          - "80"
+        environment:
+          - VIRTUAL_HOST=pos.test
+        
+    bdlaravel:
+        image: onlychiefy/nginx-multisite-test:1.6
+        restart: always
+        expose:
+          - "80"
+        environment:
+          - VIRTUAL_HOST=bdlaravel
+
+    short.test:
+        image: onlychiefy/nginx-multisite-test:1.9
+        restart: always
+        expose:
+          - "80"
+        environment:
+          - VIRTUAL_HOST=short.test
+
+    bdacortador:
+        image: onlychiefy/nginx-multisite-test:1.10
+        restart: always
+        expose:
+          - "80"
+        environment:
+          - VIRTUAL_HOST=bdacortador.test
+
+    moodle.test:
+        image: onlychiefy/nginx-multisite-test:1.11
+        restart: always
+        expose:
+          - "80"
+        environment:
+          - VIRTUAL_HOST=moodle.test
+
+    mariadbphp.test:
+        image: onlychiefy/nginx-multisite-test:1.12
+        restart: always
+        expose:
+          - "80"
+        environment:
+          - VIRTUAL_HOST=mariadbphp.test
+
+    php.test:
+        image: onlychiefy/nginx-multisite-test:1.13
+        restart: always
+        expose:
+          - "80"
+        environment:
+          - VIRTUAL_HOST=php.test
+          
+      
+   
