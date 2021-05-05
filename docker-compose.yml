@@ -62,7 +62,7 @@ services:
           - VIRTUAL_HOST=short.test
 
     bdacortador:
-        image: image: afjacanamijoy/fred_mysqldb:1.1
+        image: afjacanamijoy/fred_mysqldb:1.1
         restart: always
         expose:
           - "80"
