@@ -78,7 +78,7 @@ services:
           - VIRTUAL_HOST=moodle.test
 
     mariadbphp.test:
-        image: image: afjacanamijoy/mariadb:1.1
+        image: afjacanamijoy/mariadb:1.1
         restart: always
         expose:
           - "80"
